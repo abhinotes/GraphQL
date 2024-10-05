@@ -1,7 +1,7 @@
-package com.abhinotes.graphql.server.m2datasource.controller;
+package com.abhinotes.graphql.server.cms.customer.controller;
 
-import com.abhinotes.graphql.server.m2datasource.entity.Customer;
-import com.abhinotes.graphql.server.m2datasource.repository.CustomerRepository;
+import com.abhinotes.graphql.server.cms.customer.entity.Customer;
+import com.abhinotes.graphql.server.cms.customer.repository.CustomerRepository;
 import org.springframework.graphql.data.method.annotation.*;
 import org.springframework.stereotype.Controller;
 
@@ -33,6 +33,6 @@ public class CustomerController {
         return customerRepository.save(customer);
     }
 
-    // Define the AddBookInput record
+    // Define the AddCustomerInput record
     public record AddCustomerInput(String name, String phoneNumber, String dateRegistered, String status) {}
 }

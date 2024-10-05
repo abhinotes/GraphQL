@@ -1,0 +1,53 @@
+# src/main/resources/graphql/schema.graphqls
+
+type CustomerContext {
+    id: ID!
+    name: String!
+    phoneNumber: String!
+    dateRegistered: String!
+    status: String!
+    accounts: [Account]  # A customer can have multiple accounts
+    auditLogs: [AuditLog]  # A customer can have multiple audit logs
+}
+
+type Account {
+    id: ID!
+    accountNumber: String!
+    accountType: String!
+    customerID: String!
+    dateOpened: String!
+    balance: Float!
+    status: String!
+    transactions: [Transaction]  # An account can have multiple transactions
+}
+
+type Transaction {
+    id: ID!
+    account: String!
+    transactionType: String!
+    dateTransacted: String!
+    amount: Float!
+    status: String!
+
+}
+
+type AuditLog {
+    id: ID
+    source: String
+    timestamp: String
+    action: String
+    auditDetails: String
+}
+
+
+
+
+# Query for retrieving customer data
+type Query {
+    getCustomerContext(id: ID!): CustomerContext
+}
+
+# Mutation for adding an audit log for a customer
+type Mutation {
+    addAuditLog(customerId: ID!, action: String!): AuditLog
+}

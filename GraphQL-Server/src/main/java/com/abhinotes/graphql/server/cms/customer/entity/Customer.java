@@ -1,4 +1,4 @@
-package com.abhinotes.graphql.server.m2datasource.entity;
+package com.abhinotes.graphql.server.cms.customer.entity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
