@@ -1,4 +1,4 @@
-package com.abhinotes.graphql.server.cms.customer.controller;
+package com.abhinotes.graphql.server.cms.customer.service;
 
 import com.abhinotes.graphql.server.cms.customer.entity.Customer;
 import com.abhinotes.graphql.server.cms.customer.repository.CustomerRepository;
