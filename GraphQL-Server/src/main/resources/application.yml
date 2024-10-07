@@ -25,4 +25,7 @@ downstream:
     transaction: "http://localhost:8080/transaction"
 
 
-
+logging:
+  level:
+    com:
+      abhinotes: TRACE

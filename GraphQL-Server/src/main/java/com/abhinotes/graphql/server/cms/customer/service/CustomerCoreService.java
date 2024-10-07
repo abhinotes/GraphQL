@@ -22,7 +22,7 @@ public class CustomerCoreService {
         return customerRepository.findAll();
     }
 
-    public Optional<Customer> customerById(Long id) {
+    public Optional<Customer> findCustomerById(Long id) {
         return customerRepository.findById(id);
     }
 

@@ -11,6 +11,7 @@ build/
 .factorypath
 .project
 .settings
+.$Solution-Reference.drawio.bkp
 .springBeans
 .sts4-cache
 bin/
@@ -36,4 +37,5 @@ out/
 ### VS Code ###
 .vscode/
 .DS_Store
+
 

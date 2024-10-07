@@ -3,11 +3,11 @@ package com.abhinotes.graphql.server.graphql.controller;
 import com.abhinotes.graphql.server.banking.auditlog.entity.AuditLog;
 import com.abhinotes.graphql.server.graphql.arguments.AddInputRecords;
 import com.abhinotes.graphql.server.graphql.entity.CustomerContext;
-import com.abhinotes.graphql.server.graphql.service.impl.AccountService;
-import com.abhinotes.graphql.server.graphql.service.impl.AuditLogService;
+import com.abhinotes.graphql.server.graphql.service.downstream.AccountService;
+import com.abhinotes.graphql.server.graphql.service.downstream.AuditLogService;
 import com.abhinotes.graphql.server.graphql.service.CustomerContextService;
-import com.abhinotes.graphql.server.graphql.service.impl.CustomerService;
-import com.abhinotes.graphql.server.graphql.service.impl.TransactionService;
+import com.abhinotes.graphql.server.graphql.service.downstream.CustomerService;
+import com.abhinotes.graphql.server.graphql.service.downstream.TransactionService;
 import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.MutationMapping;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
@@ -24,7 +24,7 @@ public class CustomerContextController {
 
 
     @QueryMapping
-    public CustomerContext getCustomerContext(@Argument String id) {
+    public CustomerContext getCustomerContext(@Argument Long id) {
         return customerContextService.findCustomerContextForGivenCustomerID(id);
     }
 

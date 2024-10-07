@@ -3,8 +3,10 @@ package com.abhinotes.graphql.server.cms.account.entity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import lombok.Data;
 
 @Entity
+@Data
 public class Account {
 
     @Id
@@ -13,7 +15,7 @@ public class Account {
 
     private String accountNumber;
     private String accountType;
-    private String customerID;
+    private Long customerID;
     private String dateOpened;
     private Float balance;
     private String status;
@@ -22,17 +24,17 @@ public class Account {
     public Account() {
     }
 
-    public Account(String customerID, String dateOpened, String status) {
+    public Account(Long customerID, String dateOpened, String status) {
         this.customerID = customerID;
         this.dateOpened = dateOpened;
         this.status = status;
     }
 
-    public String getCustomerID() {
+    public Long getCustomerID() {
         return customerID;
     }
 
-    public void setCustomerID(String customerID) {
+    public void setCustomerID(Long customerID) {
         this.customerID = customerID;
     }
 
