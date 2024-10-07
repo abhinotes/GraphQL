@@ -23,7 +23,7 @@ type Account {
 
 type Transaction {
     id: ID!
-    account: String!
+    accountNumber: String!
     transactionType: String!
     dateTransacted: String!
     amount: Float!

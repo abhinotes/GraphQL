@@ -28,10 +28,10 @@ public class AccountService{
     }
 
     public List<Account> getByCustomerID(Long customerID) {
-        return restClient.get(
+        return List.of(restClient.get(
                 accountservicebaseurl
                         .concat(Constants.CUSTOMEREP)
                         .concat(String.valueOf(customerID)),
-                List.class);
+                Account[].class));
     }
 }

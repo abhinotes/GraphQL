@@ -6,6 +6,7 @@ import lombok.experimental.UtilityClass;
 public class Constants {
     public final static String FORWARDSLASH = "/";
     public final static String CUSTOMEREP = "/customer/";
+    public final static String ACCOUNTEP = "/account/";
 
 
 }

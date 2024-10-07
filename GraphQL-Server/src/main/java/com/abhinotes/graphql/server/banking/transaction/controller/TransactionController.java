@@ -27,9 +27,9 @@ public class TransactionController {
         return transactionRepository.findById(id);
     }
 
-    @GetMapping("")
-    private List<Transaction> findAllTransactions() {
-        return transactionRepository.findAll();
+    @GetMapping("/account/{accountNumber}")
+    private Optional<List<Transaction>> findTransactionByAccountNumber(@PathVariable String accountNumber) {
+        return transactionRepository.findByAccountNumber(accountNumber);
     }
 
     @PostMapping("")

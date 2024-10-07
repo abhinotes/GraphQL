@@ -14,7 +14,7 @@ public class Transaction {
     @GeneratedValue
     private Long id;
 
-    private String account;
+    private String accountNumber;
     private String transactionType;
     private String dateTransacted;
     private Float amount;
@@ -23,55 +23,11 @@ public class Transaction {
     public Transaction() {
     }
 
-    public Transaction(String account, String transactionType, String dateTransacted, Float amount, String status) {
-        this.account = account;
+    public Transaction(String accountNumber, String transactionType, String dateTransacted, Float amount, String status) {
+        this.accountNumber = accountNumber;
         this.transactionType = transactionType;
         this.dateTransacted = dateTransacted;
         this.amount = amount;
         this.status = status;
-    }
-
-    public String getAccount() {
-        return account;
-    }
-
-    public void setAccount(String account) {
-        this.account = account;
-    }
-
-    public String getTransactionType() {
-        return transactionType;
-    }
-
-    public void setTransactionType(String transactionType) {
-        this.transactionType = transactionType;
-    }
-
-    public String getDateTransacted() {
-        return dateTransacted;
-    }
-
-    public void setDateTransacted(String dateTransacted) {
-        this.dateTransacted = dateTransacted;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public Float getAmount() {
-        return amount;
-    }
-
-    public void setAmount(Float amount) {
-        this.amount = amount;
     }
 }
