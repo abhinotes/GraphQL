@@ -5,7 +5,7 @@ INSERT INTO "CUSTOMER" (ID, DATE_REGISTERED,NAME,PHONE_NUMBER,STATUS ) VALUES
 
 INSERT INTO "ACCOUNT" (balance,id,account_number, account_type, customerid , date_opened,status  ) VALUES
 (50000.3, ACCOUNT_SEQ.NEXTVAL, 'AC00001', 'Savings', '1', '04-Sep-2024', 'Active'),
-(60000.3, ACCOUNT_SEQ.NEXTVAL, 'AC00002', 'Savings', '2', '05-Sep-2024', 'Active');
+(60000.3, ACCOUNT_SEQ.NEXTVAL, 'AC00002', 'Savings', '51', '05-Sep-2024', 'Active');
 
 INSERT INTO "TRANSACTION" (amount, id, account_number,date_transacted,status , transaction_type) VALUES
 (500.0, TRANSACTION_SEQ.NEXTVAL, 'AC00001', '06-Oct-2024', 'Success', 'Debit'),

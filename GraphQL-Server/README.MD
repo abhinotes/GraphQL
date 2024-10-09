@@ -12,6 +12,8 @@ Implemented 3 types of data sources as backend :
 ![Solution-Reference](images/Solution-Reference.svg)
 
 
+### Postman Collection 
+https://www.postman.com/abhinotes/learning-suqad/overview
 
 
 ### Useful Scripts

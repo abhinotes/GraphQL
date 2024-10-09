@@ -1,6 +1,8 @@
 spring:
   application:
     name: GraphQL Server
+  graphql:
+    path : "gql"
   datasource:
     initialization-mode: always
     url: jdbc:h2:mem:GraphQLdb;Mode=Oracle
@@ -23,6 +25,7 @@ downstream:
   url:
     account: "http://localhost:8080/account"
     transaction: "http://localhost:8080/transaction"
+
 
 
 logging:
