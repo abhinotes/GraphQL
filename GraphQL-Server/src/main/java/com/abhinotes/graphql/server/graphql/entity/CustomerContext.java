@@ -1,6 +1,6 @@
 package com.abhinotes.graphql.server.graphql.entity;
 
-import com.abhinotes.graphql.server.banking.auditlog.entity.AuditLog;
+import com.abhinotes.graphql.server.banking.notification.model.NotificationMessage;
 import com.abhinotes.graphql.server.cms.account.entity.Account;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -21,6 +21,6 @@ public class CustomerContext {
     private String dateRegistered;
     private String status;
     private List<Account> accounts;
-    private List<AuditLog> auditLogs;
+    private List<NotificationMessage> notifications;
 
 }

@@ -7,7 +7,7 @@ type CustomerContext {
     dateRegistered: String!
     status: String!
     accounts: [Account]  # A customer can have multiple accounts
-    auditLogs: [AuditLog]  # A customer can have multiple audit logs
+    notifications: [NotificationMessage]  # A customer can have multiple audit logs
 }
 
 type Account {
@@ -31,23 +31,12 @@ type Transaction {
 
 }
 
-type AuditLog {
-    id: ID
-    source: String
-    timestamp: String
-    action: String
-    auditDetails: String
+type NotificationMessage {
+    key: String
+    value: String
 }
-
-
-
 
 # Query for retrieving customer data
 type Query {
     getCustomerContext(id: ID!): CustomerContext
-}
-
-# Mutation for adding an audit log for a customer
-type Mutation {
-    addAuditLog(customerId: ID!, action: String!): AuditLog
 }

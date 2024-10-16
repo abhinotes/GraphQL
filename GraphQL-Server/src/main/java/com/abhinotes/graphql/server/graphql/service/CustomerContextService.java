@@ -1,12 +1,11 @@
 package com.abhinotes.graphql.server.graphql.service;
 
-import com.abhinotes.graphql.server.banking.auditlog.entity.AuditLog;
+import com.abhinotes.graphql.server.banking.notification.model.NotificationMessage;
 import com.abhinotes.graphql.server.banking.transaction.entity.Transaction;
 import com.abhinotes.graphql.server.cms.account.entity.Account;
 import com.abhinotes.graphql.server.cms.customer.entity.Customer;
-import com.abhinotes.graphql.server.graphql.arguments.AddInputRecords;
 import com.abhinotes.graphql.server.graphql.service.downstream.AccountService;
-import com.abhinotes.graphql.server.graphql.service.downstream.AuditLogService;
+import com.abhinotes.graphql.server.graphql.service.downstream.NotificationService;
 import com.abhinotes.graphql.server.graphql.service.downstream.CustomerService;
 import com.abhinotes.graphql.server.graphql.service.downstream.TransactionService;
 import lombok.extern.slf4j.Slf4j;
@@ -22,13 +21,13 @@ public class CustomerContextService {
     private final CustomerService customerService;
     private final AccountService accountService;
     private final TransactionService transactionService;
-    private final AuditLogService auditLogService;
+    private final NotificationService notificationService;
 
-    public CustomerContextService(CustomerService customerService, AccountService accountService, TransactionService transactionService, AuditLogService auditLogService) {
+    public CustomerContextService(CustomerService customerService, AccountService accountService, TransactionService transactionService, NotificationService notificationService) {
         this.customerService = customerService;
         this.accountService = accountService;
         this.transactionService = transactionService;
-        this.auditLogService = auditLogService;
+        this.notificationService = notificationService;
     }
 
 
@@ -51,7 +50,8 @@ public class CustomerContextService {
         return transactionList;
     }
 
-    public AuditLog saveAuditLogRecord(AddInputRecords.AddAuditLogInput input) {
-        return null;
-    }
+   public List<NotificationMessage> getNotifications() {
+        return notificationService.newNotifications();
+   }
+
 }

@@ -1,12 +1,12 @@
 package com.abhinotes.graphql.server.graphql.controller;
 
-import com.abhinotes.graphql.server.banking.auditlog.entity.AuditLog;
+import com.abhinotes.graphql.server.banking.notification.model.NotificationMessage;
 import com.abhinotes.graphql.server.banking.transaction.entity.Transaction;
 import com.abhinotes.graphql.server.cms.account.entity.Account;
 import com.abhinotes.graphql.server.cms.customer.entity.Customer;
 import com.abhinotes.graphql.server.graphql.arguments.AddInputRecords;
 import com.abhinotes.graphql.server.graphql.service.downstream.AccountService;
-import com.abhinotes.graphql.server.graphql.service.downstream.AuditLogService;
+import com.abhinotes.graphql.server.graphql.service.downstream.NotificationService;
 import com.abhinotes.graphql.server.graphql.service.CustomerContextService;
 import com.abhinotes.graphql.server.graphql.service.downstream.CustomerService;
 import com.abhinotes.graphql.server.graphql.service.downstream.TransactionService;
@@ -25,7 +25,7 @@ public class CustomerContextController {
 
     private final CustomerContextService customerContextService;
 
-    public CustomerContextController(CustomerContextService customerContextService, CustomerService customerService, AccountService accountService, TransactionService transactionService, AuditLogService auditLogService) {
+    public CustomerContextController(CustomerContextService customerContextService, CustomerService customerService, AccountService accountService, TransactionService transactionService, NotificationService notificationService) {
         this.customerContextService = customerContextService;
     }
 
@@ -48,10 +48,12 @@ public class CustomerContextController {
         return customerContextService.getTransactionsForAccount(account.getAccountNumber());
     }
 
-    @MutationMapping
-    public AuditLog addAuditLog(@Argument AddInputRecords.AddAuditLogInput input) {
-        return customerContextService.saveAuditLogRecord(input);
+    @SchemaMapping(typeName = "CustomerContext", field = "notifications")
+    public List<NotificationMessage> getNotifications(Customer customer) {
+        log.trace("#GPQL# 4 : Populating Notifications for given Customer Number {} ", customer.getId());
+        return customerContextService.getNotifications();
     }
+
 
 
 }

@@ -1,4 +1,4 @@
-package com.abhinotes.graphql.server.banking.auditlog.config;
+package com.abhinotes.graphql.server.banking.notification.config;
 
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
@@ -20,6 +20,7 @@ public class KafkaConsumerConfig {
     public ConsumerFactory<String, String> consumerFactory() {
         Map<String, Object> config = new HashMap<>();
 
+        //TODO Load configs from application.yml
         config.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
         config.put(ConsumerConfig.GROUP_ID_CONFIG, "graphql-group");
         config.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);

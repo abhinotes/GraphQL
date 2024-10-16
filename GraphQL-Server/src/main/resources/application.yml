@@ -25,6 +25,8 @@ downstream:
   url:
     account: "http://localhost:8080/account"
     transaction: "http://localhost:8080/transaction"
+  kafka:
+    product-offer-topic: "product-offers"
 
 
 
